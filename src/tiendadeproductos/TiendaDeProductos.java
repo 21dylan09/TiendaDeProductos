@@ -15,6 +15,7 @@ public class TiendaDeProductos {
         //instanciar productos
         Tienda miTienda;
         miTienda = new Tienda();
+        System.out.println("jsksjkaskj");
         System.out.println("El valor actual de ventas es de: " + miTienda.calcularDineroEnCaja());
         System.out.println("Evaluación de expresiones aritméticas (1):");
         Producto P1 = new Producto("Libreta", Producto.PAPELERIA, 23, 15,5500,87 );
