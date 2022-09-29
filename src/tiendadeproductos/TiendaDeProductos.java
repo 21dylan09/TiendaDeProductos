@@ -15,7 +15,7 @@ public class TiendaDeProductos {
         //instanciar productos
         Tienda miTienda;
         miTienda = new Tienda();
-        System.out.println("Lozano Forigua Dylan Felipe 2210547");
+        System.out.println("Lozano Forigua Dylan Felipe");
         System.out.println("Evaluación de expresiones aritméticas (1):");
         Producto P1 = new Producto("Libreta", Producto.PAPELERIA, 23, 15,5500,87 );
         double resultado1 = P1.getPrecioBase()*P1.getCantidadActual()/P1.getNumeroMinimo();

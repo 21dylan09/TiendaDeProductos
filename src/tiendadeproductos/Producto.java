@@ -105,7 +105,7 @@ public class Producto {
     public boolean papeleria(){
         return this.tipo != Producto.PAPELERIA;
     }
-    
+    //P
     public boolean Nombre2(){
         return this.nombre == "Aspirina"  ;
     }

@@ -9,9 +9,7 @@ package tiendadeproductos;
  * @author dylan Lozano
  */
 public class Tienda {
-    //Atributos
-//    private double ventasTotales;
-//    private int cantidadTotal;
+    
     private Producto p1;
     private Producto p2;
     private Producto p3;
@@ -26,11 +24,7 @@ public class Tienda {
     p4=new Producto();
    }
 
-//    public Tienda(double ventasTotales, int cantidadTotal) {
-//        this.ventasTotales = ventasTotales;
-//        this.cantidadTotal = cantidadTotal;
-//        
-//    }
+
 
     public Tienda(Producto p1, Producto p2, Producto p3, Producto p4) {
         this.p1 = p1;
