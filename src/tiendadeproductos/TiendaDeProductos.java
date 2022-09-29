@@ -4,7 +4,7 @@ package tiendadeproductos;
 
 /**
  *
- * @author dylan
+ * @author dylan Lozano
  */
 public class TiendaDeProductos {
 
@@ -15,8 +15,6 @@ public class TiendaDeProductos {
         //instanciar productos
         Tienda miTienda;
         miTienda = new Tienda();
-        System.out.println("jsksjkaskj");
-        System.out.println("El valor actual de ventas es de: " + miTienda.calcularDineroEnCaja());
         System.out.println("Evaluaci๓n de expresiones aritm้ticas (1):");
         Producto P1 = new Producto("Libreta", Producto.PAPELERIA, 23, 15,5500,87 );
         double resultado1 = P1.getPrecioBase()*P1.getCantidadActual()/P1.getNumeroMinimo();
@@ -60,6 +58,7 @@ public class TiendaDeProductos {
         System.out.println("Veces que se ha vendido la cantidad mํnima del producto: " + (P3.getUnidadesVendidas()/P3.getNumeroMinimo()));
         System.out.println("N๚mero de unidades sobrantes si se arman paquetes de 10 unidades con lo disponible en bodega: " +
                 P4.getCantidadActual()%10 + "\n");
+        System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ");
         System.out.println("Creaci๓n de expresiones (2): ");
         System.out.println(miTienda.calcularDineroEnCaja());
         double rTienda = miTienda.calcularDineroEnCaja()*0.25;
@@ -68,9 +67,10 @@ public class TiendaDeProductos {
                 + (P4.getUnidadesVendidas()*Producto.IVA_FARMACIA);
         System.out.println("Total del iva a pagar por las unidades vendidas de todos los productos: " + rIva +"%");
         double rPagar = miTienda.calcularDineroEnCaja() / P3.getPrecioBase();
-        System.out.println("N๚mero de unidades del producto 3 que se pueden pagar con el dinero en caja de la tienda a su valor unitario: " + rPagar);
+        System.out.println("N๚mero de unidades del producto 3 que se pueden pagar con el dinero en caja de la tienda a su valor unitario: " + rPagar + "\n");
         
     //Evaluaci๓n de expresiones con operadores relacionales:
+    System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" );
      if (P1.getTipo()==Producto.PAPELERIA){
          System.out.println("El producto es de papeleria");   
      }
@@ -120,44 +120,37 @@ public class TiendaDeProductos {
      else{
          System.out.println("Tiena mas de mil productos disponibles en la bodega");
      }
-     //dineroEnCaja * p1.darIVA ( ) >  p1.darProductosVendidos ( ) *  p1.darValorUnitario ( )
-     if (miTienda.calcularDineroEnCaja()*Producto.IVA_PAPEL>P1.getUnidadesVendidas()*P1.getPrecioBase()){
-         System.out.println("Ha tenido ganancias vendiendo libretas");
-     }
-     else{
-         System.out.println("No ha tenido ganancias vendiendo libretas");
-     }
-     //
-     if (miTienda.calcularDineroEnCaja()*Producto.IVA_PAPEL>P1.getUnidadesVendidas()*P1.getPrecioBase()){
-         System.out.println("Ha tenido ganancias vendiendo libretas");
-     }
-     else{
-         System.out.println("No ha tenido ganancias vendiendo libretas \n");
-     }
+    System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" ); 
      System.out.println("Creaci๓n de expresiones relacionales");
-     System.out.println("ฟLa cantidad en bodega es mayor o igual al doble de la cantidad mํnima?");
-     System.out.println((P1.getCantidadActual()+P2.getCantidadActual()+P3.getCantidadActual()+P4.getCantidadActual()/4) >= 
-             (2*(P1.getNumeroMinimo()+P1.getNumeroMinimo()+P1.getNumeroMinimo()+P1.getNumeroMinimo()/4)));
-     System.out.println("ฟEl tipo no es PAPELERIA?");
-     System.out.println(P1.getTipo()==Producto.PAPELERIA);
-     
-     
-     //CLASE 19/09/2022
-        System.out.println("Valor unitario con iva "+P1.valorUnitariopapeleria(true));
-        System.out.println("Valor unitario sin iva "+P1.valorUnitariopapeleria(false));
+     System.out.println(P1.getNombre()+": " + "ฟLa cantidad en bodega es mayor o igual al doble de la cantidad mํnima?: " + P1.cantidadactualdoblecantidadminima() );
+     System.out.println(P2.getNombre()+": "+ "ฟLa cantidad de bodega es el doble de a cantidad  minima?:  " + P2.cantidadactualdoblecantidadminima());
+     System.out.println(P3.getNombre()+": "+ "ฟLa cantidad de bodega es el doble de a cantidad  minima?:  " + P3.cantidadactualdoblecantidadminima());
+     System.out.println(P4.getNombre()+": "+ "ฟLa cantidad de bodega es el doble de a cantidad  minima?:  " + P4.cantidadactualdoblecantidadminima());
+     System.out.println("ฟEl tipo de " + P1.getNombre() + " de tipo " + P1.getTipo() + " no es de la papeleria? " + P1.papeleria());
+     System.out.println("ฟEl tipo de " + P2.getNombre() + " de tipo " + P2.getTipo() + " no es de la papeleria? " + P2.papeleria());
+     System.out.println("ฟEl tipo de " + P3.getNombre() + " de tipo " + P3.getTipo() + " no es de la papeleria? " + P3.papeleria());
+     System.out.println("ฟEl tipo de " + P4.getNombre() + " de tipo " + P4.getTipo() + " no es de la papeleria? " + P4.papeleria());
+     System.out.println(P1.getNombre()+": "+ "ฟEl total de productos vendidos, es  igual a la cantidad en bodega?: " + P1.igualdadprocutosconbodega());
+     System.out.println(P2.getNombre()+": "+ "ฟEl total de productos vendidos, es  igual a la cantidad en bodega?: " + P2.igualdadprocutosconbodega());
+     System.out.println(P3.getNombre()+": "+ "ฟEl total de productos vendidos, es  igual a la cantidad en bodega?: " + P3.igualdadprocutosconbodega());
+     System.out.println(P4.getNombre()+": "+ "ฟEl total de productos vendidos, es  igual a la cantidad en bodega?: " + P4.igualdadprocutosconbodega());
+     System.out.println("ฟEl nombre del producto 2 es aspirina?: " + P2.Nombre2() );
+     System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" ); 
+     System.out.println("ฟLa cantidad mํnima del producto 4 es  una quinta parte de la cantidad de  productos vendidos?: " + miTienda.quintaParte());
+     System.out.println("ฟEl valor obtenido por los productos vendidos (incluyendo el IVA) es menor a un tercio del dinero en caja?:");
+     System.out.println("ฟEl promedio de unidades vendidas de  todos los productos es mayor al  promedio de unidades en bodega de  todos los productos?: " + miTienda.promedioUV()+ "\n");
+     System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" );
+     System.out.println("Valor unitario de " +P1.getNombre() +" con iva es de: "+miTienda.getP1().valorUnitario(true));
+     System.out.println("Valor unitario de "+P1.getNombre() + " sin iva es de: "+miTienda.getP1().valorUnitario(false));
         
-        System.out.println("Valor unitario con iva "+miTienda.getP1().valorUnitario(true));
-        System.out.println("Valor unitario sin iva "+miTienda.getP1().valorUnitario(false));
+     System.out.println("Valor unitario de "+P2.getNombre() + " con iva es de: "+miTienda.getP2().valorUnitario(true));
+     System.out.println("Valor unitario de "+P2.getNombre() + " sin iva es de: "+miTienda.getP2().valorUnitario(false));
         
-        System.out.println("Valor unitario con iva "+miTienda.getP2().valorUnitario(true));
-        System.out.println("Valor unitario sin iva "+miTienda.getP2().valorUnitario(false));
+     System.out.println("Valor unitario de "+P3.getNombre() + " con iva es de: "+miTienda.getP3().valorUnitario(true));
+     System.out.println("Valor unitario de "+P3.getNombre() + " sin iva es de: "+miTienda.getP3().valorUnitario(false));
         
-        System.out.println("Valor unitario con iva "+miTienda.getP3().valorUnitario(true));
-        System.out.println("Valor unitario sin iva "+miTienda.getP3().valorUnitario(false));
-        
-        System.out.println("Valor unitario con iva "+miTienda.getP4().valorUnitario(true));
-        System.out.println("Valor unitario sin iva "+miTienda.getP4().valorUnitario(false));
-        
+     System.out.println("Valor unitario de "+P4.getNombre() + " con iva es de: "+miTienda.getP4().valorUnitario(true));
+     System.out.println("Valor unitario de "+P4.getNombre() + " sin iva es de: "+miTienda.getP4().valorUnitario(false));
     }
     
      

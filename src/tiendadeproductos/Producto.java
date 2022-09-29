@@ -6,7 +6,7 @@ package tiendadeproductos;
 
 /**
  *
- * @author dylan
+ * @author dylan Lozano
  */
 public class Producto {
     //constantes
@@ -94,37 +94,23 @@ public class Producto {
         sobran_antes_pedidos = this.cantidadActual-numeroMinimo;
         this.unidadesVendidas = this.unidadesVendidas + cantidad;
     }
-//    public void vender (int cantidad){
-//        this.cantidadActual=this.cantidadActual - unidadesVendidas;
-//       CLASE 12/09/2022
-//    }
-    public void incrementarCantidadBodega(){
-       cantidadActual +=5;
+    public boolean cantidadactualdoblecantidadminima() {
+      return this.cantidadActual >= 2 * this.numeroMinimo;
     }
-    public void pedir (int num){
-        cantidadActual += num;
+    
+    public boolean igualdadprocutosconbodega() {
+        return this.unidadesVendidas == this.cantidadActual;
     }
-    public void venderCincoUnidades(){
-        this.unidadesVendidas+=5;
-        this.cantidadActual-=5;
+    
+    public boolean papeleria(){
+        return this.tipo != Producto.PAPELERIA;
     }
-    public void venderUnidades(int cantidad){
-        this.unidadesVendidas+=cantidad;
-        this.unidadesVendidas-=cantidad;
+    
+    public boolean Nombre2(){
+        return this.nombre == "Aspirina"  ;
     }
-    public void incrementarValorUnitario(double porcentaje){
-        this.precioBase += this.precioBase * porcentaje;
-    }
-   // CLASE 19/09/2022
-    //metodo para devolver un valor del producto de papeleria sin iva
-    public double valorUnitariopapeleria (boolean conIVA){
-        //valor unitario Con IVA
-        if(conIVA)
-            return precioBase+ (precioBase*Producto.IVA_PAPEL);
-        //Valor unitario Sin IVA
-        else
-        return precioBase;
-     }
+
+
     public double valorUnitario(boolean conIVA){
         //valor unitario Con IVA
         if(conIVA){
@@ -140,6 +126,5 @@ public class Producto {
         }
         //valor unitario sin IVA
         return precioBase;
-    }    
-    
+    }        
 }
