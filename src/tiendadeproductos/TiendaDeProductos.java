@@ -1,6 +1,6 @@
 package tiendadeproductos;
 
-//import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  *
@@ -140,7 +140,6 @@ public class TiendaDeProductos {
      System.out.println("ฟLa cantidad mํnima del producto 4 es  una quinta parte de la cantidad de  productos vendidos?: " + miTienda.quintaParte());
      System.out.println("ฟEl valor obtenido por los productos vendidos (incluyendo el IVA) es menor a un tercio del dinero en caja?:");
      System.out.println("ฟEl promedio de unidades vendidas de  todos los productos es mayor al  promedio de unidades en bodega de  todos los productos?: " + miTienda.promedioUV()+ "\n");
-     System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" );
      System.out.println("Valor unitario de " +P1.getNombre() +" con iva es de: "+miTienda.getP1().valorUnitario(true));
      System.out.println("Valor unitario de "+P1.getNombre() + " sin iva es de: "+miTienda.getP1().valorUnitario(false));
         
@@ -152,7 +151,45 @@ public class TiendaDeProductos {
         
      System.out.println("Valor unitario de "+P4.getNombre() + " con iva es de: "+miTienda.getP4().valorUnitario(true));
      System.out.println("Valor unitario de "+P4.getNombre() + " sin iva es de: "+miTienda.getP4().valorUnitario(false));
+     System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ\n" );
+        System.out.println("Primer Ejercicio: ");
+     if(miTienda.totalProductos()<=0){
+         System.out.println("No hay suficientes productos para realizar una compra");
+     }
+     else{
+         System.out.println("hay suficientes productos para realizar una compra");
+     }
+     System.out.println("Segundo Ejercicio: ");
+     System.out.println("Valor unitario con iva "+P1.valorUnitariopapeleria(true));
+     System.out.println("Valor unitario sin iva "+P1.valorUnitariopapeleria(false));
+     System.out.println("Tercer Ejercicio: ");
+     Scanner scan = new Scanner(System.in);
+        System.out.println("ฟCuantas unidades desea comprar?");
+     int unidades = scan.nextInt();
+        P1.venderUnidades(unidades);
+        System.out.println("Se vendieron " + unidades + " unidades"); 
+    if (unidades>10){
+        System.out.println("Usted tiene un descuento del 10% al precio final\n");
+    }    
+     System.out.println("Cuarto Ejercicio: ");
+    if (unidades>=100){
+        System.out.println("Usted tiene un incremento del 10% al valor unitario");
     }
-    
-     
+    else{
+        System.out.println("Usted tiene un descuento del 20% al precio final\n");
+    }
+    System.out.println("บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ" );
+        System.out.println("Elaboraci๓n de expresiones condicionales:");
+        System.out.println("M้todo subirValorUnitario");
+        System.out.println("El valor a pagar es de: " + P1.subirValorUnitario(55000));
+        System.out.println("M้todo hacerPedido?");
+        System.out.println("Hacer pedido?" + P1.hacerPedido(false));
+        System.out.println("M้todo cuantoPedir?");
+        System.out.println("");
+        System.out.println(" M้todo cambiarValorUnitario");
+        System.out.println("El valor a pagar es de: "+miTienda.getP1().subirValorUnitario(rIva));
+        System.out.println("M้todo cuantosPapeleria");
+        System.out.println("De papeleria se vendieron " + P1.getUnidadesVendidas() + " unidades");
+        
+    } 
 }

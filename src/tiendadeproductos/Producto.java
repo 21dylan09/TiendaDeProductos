@@ -127,4 +127,59 @@ public class Producto {
         //valor unitario sin IVA
         return precioBase;
     }        
+    
+    public void venderUnidades(int cantidad){
+        this.unidadesVendidas+=cantidad;
+        this.unidadesVendidas-=cantidad;
+    }
+    
+     //metodo para devolver un valor del producto de papeleria sin iva
+     public double valorUnitariopapeleria (boolean conIVA){
+        //valor unitario Con IVA
+        if(conIVA)
+            return precioBase+ (precioBase*Producto.IVA_PAPEL);
+        //Valor unitario Sin IVA
+        else
+        return precioBase;
+     }
+     //Método subirValorUnitario
+     public double subirValorUnitario(double precio){
+         if(precio<1000){
+             return precioBase+(precioBase* 0.1);
+         }
+         if(precio>=1000 && precio<=5000){
+             return precioBase+(precioBase* 0.2);
+         }
+         if (precio>5000){
+             return precioBase+(precioBase* 0.3);
+         }
+         else 
+         return precioBase;
+     }
+     //Método hacerPedido?
+      public String hacerPedido(boolean pedido){
+          if (pedido){
+          if(cantidadActual>numeroMinimo)    
+          return "no";
+          }else{
+              return "si";
+          }
+        return null;
+      }
+       public double cambiarValorUnitario(boolean conT){
+        //valor unitario Con IVA
+        if(conT){
+        //tipo prodcuto PAPELERIA
+        if (this.tipo==Producto.PAPELERIA)
+            return precioBase+ (precioBase*0.10);
+            
+        //tipo prodcuto SUPERMERCADO
+        else if (this.tipo==Producto.SUPERMERCADO)
+            return precioBase+ (precioBase*0.5);
+        //tipo prodcuto DROGUERIA
+           return precioBase+ (precioBase*0.10);
+        }
+        //valor unitario sin IVA
+        return precioBase;
+    }        
 }

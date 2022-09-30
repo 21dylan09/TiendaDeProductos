@@ -92,4 +92,10 @@ public class Tienda {
                  > p1.getCantidadActual() + p2.getCantidadActual() + p3.getCantidadActual() + p4.getCantidadActual() / 4 );
          return unpromedioVB;
     }
+    public double totalProductos(){
+        double totalP = p1.getUnidadesVendidas()+p2.getUnidadesVendidas()
+                +p3.getUnidadesVendidas()+p4.getUnidadesVendidas();
+        return totalP;
+    }
+    
 }
